@@ -224,7 +224,11 @@ class Basic(Printable):
     is_negative: bool | None
     is_commutative: bool | None
 
-    kind: Kind = UndefinedKind
+
+    #kind: Kind = UndefinedKind
+    @property
+    def kind(self) -> Kind:
+        return UndefinedKind
 
     def __new__(cls, *args):
         obj = object.__new__(cls)
